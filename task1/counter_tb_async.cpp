@@ -5,6 +5,7 @@
 int main(int argc, char **argv, char **env){
     int i;
     int clk;
+    int x = 0;
 
     Verilated::commandArgs(argc, argv);
     // init top verilog instance
@@ -17,7 +18,7 @@ int main(int argc, char **argv, char **env){
 
     // initialize simulation inputs
     top->clk = 1;
-    top->rst = 1;
+    top->rst = 0;
     top->en = 0;
 
     // run simulation for many clock cycles
@@ -29,8 +30,8 @@ int main(int argc, char **argv, char **env){
             top->clk = !top->clk;
             top->eval (); 
         }
-        top->rst = (i<2) | (i == 15);
         top->en = (i>4);
+
         if (Verilated::gotFinish()) exit(0);
     }
     tfp->close();

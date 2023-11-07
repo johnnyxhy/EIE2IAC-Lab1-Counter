@@ -16,9 +16,7 @@ VL_INLINE_OPT void Vcounter___024root___sequent__TOP__0(Vcounter___024root* vlSe
                                                       ? 
                                                      ((IData)(1U) 
                                                       + (IData)(vlSelf->count))
-                                                      : 
-                                                     ((IData)(vlSelf->count) 
-                                                      - (IData)(1U)))));
+                                                      : (IData)(vlSelf->count))));
 }
 
 void Vcounter___024root___eval(Vcounter___024root* vlSelf) {
